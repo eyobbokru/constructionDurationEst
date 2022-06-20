@@ -1,10 +1,13 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
 import Welcome from '@/Jetstream/Welcome.vue';
+import AdminLayout from '../Layouts/AdminLayout.vue';
+
 </script>
 
 <template>
-    <AppLayout title="Dashboard">
+    <AdminLayout title="Dashboard">
+        
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Dashboard
@@ -18,5 +21,7 @@ import Welcome from '@/Jetstream/Welcome.vue';
                 </div>
             </div>
         </div>
-    </AppLayout>
+    </AdminLayout>
 </template>
+
+

@@ -1,8 +1,12 @@
 <?php
 
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\ParamFieldController;
+use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\Admin\ParamFieldOptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,17 +29,31 @@ Route::get('/', function () {
 });
 
 
-Route::get('/admin', function () {
-    return Inertia::render('Admin/Index');
-});
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
+    'role:admin'
+])->prefix('admin')->name('admin.')->group(function () {
 
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+
+    Route::get('/', function () {
+        return Inertia::render('Admin/Index');
+    })->name('index');
+
+    Route::get('/parameter/pre', [SubCategoryController::class, 'index_pre'])->name('parameter.index_pre');
+    Route::get('/parameter/pos', [SubCategoryController::class, 'index_pos'])->name('parameter.index_pos');
+    Route::get('/parameter/con', [SubCategoryController::class, 'index_con'])->name('parameter.index_con');
+
+
+    Route::resource('/parameter', SubCategoryController::class);
+    Route::resource('/paramfield', ParamFieldController::class);
+    Route::resource('/options', ParamFieldOptionController::class);
+    Route::resource('/user', UserController::class);
 });
+Route::get('/dashboard', function () {
+
+
+    return Inertia::render('Dashboard');
+})->name('dashboard');

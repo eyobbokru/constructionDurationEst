@@ -60,7 +60,6 @@
           bg-gray-700 bg-opacity-25
           text-gray-100
         "
-
       >
         <svg
           class="h-6 w-6"
@@ -114,7 +113,7 @@
           />
         </svg>
 
-        <span class="mx-3">User</span>
+        <span class="mx-3">Projects</span>
       </Link>
       <Link
         class="
@@ -144,95 +143,9 @@
           />
         </svg>
 
-        <span class="mx-3">General Parameters</span>
+        <span class="mx-3">Estimate</span>
       </Link>
-      <Link
-        class="
-          flex
-          items-center
-          mt-4
-          py-2
-          px-6
-          text-gray-500
-          hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100
-        "
-        :href="route('admin.parameter.index_pre')"
-      >
-        <svg
-          class="h-6 w-6"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"
-          />
-        </svg>
-
-        <span class="mx-3">Preconstruction Stage Parameters</span>
-      </Link>
-      <Link
-        class="
-          flex
-          items-center
-          mt-4
-          py-2
-          px-6
-          text-gray-500
-          hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100
-        "
-         :href="route('admin.parameter.index_con')"
-      >
-        <svg
-          class="h-6 w-6"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"
-          />
-        </svg>
-
-        <span class="mx-3">Construction Stage Parameters</span>
-      </Link>
-      <Link
-        class="
-          flex
-          items-center
-          mt-4
-          py-2
-          px-6
-          text-gray-500
-          hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100
-        "
-            :href="route('admin.parameter.index_pos')"
-      >
-        <svg
-          class="h-6 w-6"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"
-          />
-        </svg>
-
-        <span class="mx-3">Post construction Parameters</span>
-      </Link>
+   
     </nav>
   </div>
 </template>
