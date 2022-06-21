@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\ParamFieldController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ParamFieldOptionController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,18 @@ Route::middleware([
     Route::resource('/options', ParamFieldOptionController::class);
     Route::resource('/user', UserController::class);
 });
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+    'role:user'
+])->prefix('user')->name('user.')->group(function () {
+
+    Route::get('/Estimate', [ProjectController::class, 'index2'])->name('project.index2');
+    Route::resource('/project', ProjectController::class);
+});
+
 Route::get('/dashboard', function () {
 
 

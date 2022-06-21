@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ParamField extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'dataType', 'value', 'unit', 'sub_categories_id'];
+    protected $fillable = ['name', 'dataType', 'value', 'unit', 'sub_category_id'];
 
     public function subCategory()
     {

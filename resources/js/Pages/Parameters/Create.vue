@@ -44,14 +44,14 @@
                                                 id="select"
 
                                                 class="mt-1 block w-full"
-                                                v-model="form.sub_categories_id"
+                                                v-model="form.sub_category_id"
                                                 autofocus required>
 
                                                 <option   v-for="parameter in parameters" :key="parameter.id" :value="parameter.id"> {{parameter.name}}</option>
                                                 </select>
 
-                                                <div class="text-sm text-red-400" v-if="form.errors.sub_categories_id">
-                                                {{ form.errors.sub_categories_id }}
+                                                <div class="text-sm text-red-400" v-if="form.errors.sub_category_id">
+                                                {{ form.errors.sub_category_id }}
                                                 </div>
 
                                             <jet-label for="title" value="Title" />
@@ -197,7 +197,7 @@ const props = defineProps({
 
 const form = useForm({
 
-  sub_categories_id:"",
+  sub_category_id:"",
   name: "",
   dataType:"",
   value:"",

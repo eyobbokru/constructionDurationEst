@@ -2,7 +2,7 @@
   <AdminLayout title="Dashboard">
     <template #header>
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      Construction Stage Parameters
+      Project
       </h2>
     </template>
 
@@ -11,7 +11,7 @@
         <section class="container mx-auto p-6 font-mono">
           <div class="w-full flex mb-4 p-2 justify-end">
             <Link
-              :href="route('admin.paramfield.create')"
+              :href="route('user.project.create')"
               class="
                 px-4
                 py-2
@@ -21,7 +21,7 @@
                 rounded-lg
               "
             >
-              Create Parameter
+              Create Project
             </Link>
           </div>
 
@@ -101,25 +101,26 @@
                     "
                   >
                     <th class="px-4 py-3">Name</th>
-                    <th class="px-4 py-3">Slug</th>
+                    <th class="px-4 py-3"> Detail
+                    </th>
                     <th class="px-4 py-3">Manage</th>
                   </tr>
                 </thead>
                 <tbody class="bg-white">
                   <tr
-                    v-for="tag in parameters.data"
+                    v-for="tag in projects.data"
                     :key="tag.id"
                     class="text-gray-700"
                   >
                     <td class="px-4 py-3 border">{{ tag.name }}</td>
                     <td class="px-4 py-3 text-ms font-semibold border">
-
+                           {{ tag.detail }}
                     </td>
 
                     <td class="px-4 py-3 text-sm border">
                       <div class="flex justify-around">
                         <Link
-                          :href="route('admin.paramfield.edit', tag.id)"
+                          :href="route('admin.user.edit', tag.id)"
                           class="
                             bg-green-500
                             hover:bg-green-700
@@ -132,7 +133,7 @@
                           Edit
                         </Link>
                         <Link
-                          :href="route('admin.paramfield.destroy', tag.id)"
+                          :href="route('admin.user.destroy', tag.id)"
                           method="delete"
                           as="button"
                           type="button"
@@ -153,7 +154,7 @@
                 </tbody>
               </table>
               <div class="m-2 p-2">
-                <Pagination :links="parameters.links" />
+                <Pagination :links="projects.links" />
               </div>
             </div>
           </div>
@@ -171,7 +172,7 @@ import { ref, watch, defineProps } from "vue";
 import { Inertia } from "@inertiajs/inertia";
 
 const props = defineProps({
-  parameters: Object,
+    projects: Object,
    filters: Object,
 });
 
@@ -180,7 +181,7 @@ const perPage = ref(5);
 
 watch(search, (value) => {
   Inertia.get(
-    "/admin/parameter/con",
+    "/user/project",
     { search: value, perPage: perPage.value },
     {
       preserveState: true,
@@ -191,7 +192,7 @@ watch(search, (value) => {
 
 function getTags() {
   Inertia.get(
-    "/admin/parameter/con",
+    "/user/project",
     { perPage: perPage.value, search: search.value },
     {
       preserveState: true,

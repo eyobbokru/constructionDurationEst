@@ -45,7 +45,7 @@
           />
         </svg>
 
-        <span class="text-white text-2xl mx-2 font-semibold">Dashboard</span>
+        <span class="text-white text-2xl mx-2 font-semibold">Construction Duration</span>
       </div>
     </div>
 
@@ -82,7 +82,7 @@
           />
         </svg>
 
-        <span class="mx-3">Dashboard</span>
+        <span class="mx-3"></span>
       </Link>
 
       <Link
@@ -96,7 +96,7 @@
           hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100
 
         "
-        :href="route('admin.user.index')"
+        :href="route('user.project.index')"
       >
         <svg
           class="h-6 w-6"
@@ -125,7 +125,7 @@
           text-gray-500
           hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100
         "
-        :href="route('admin.parameter.index')"
+        :href="route('user.project.index2')"
       >
 
         <svg

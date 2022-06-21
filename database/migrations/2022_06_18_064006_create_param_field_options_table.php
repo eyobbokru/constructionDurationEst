@@ -17,7 +17,7 @@ class CreateParamFieldOptionsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('value');
-            $table->foreignId('param_fields_id');
+            $table->foreignId('param_field_id');
             $table->timestamps();
         });
     }

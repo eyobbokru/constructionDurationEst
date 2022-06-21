@@ -21,7 +21,7 @@
                 rounded-lg
               "
             >
-              Create Tag
+              Create Parameter
             </Link>
           </div>
 

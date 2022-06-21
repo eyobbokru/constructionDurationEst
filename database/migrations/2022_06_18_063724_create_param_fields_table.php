@@ -20,7 +20,7 @@ class CreateParamFieldsTable extends Migration
             $table->string('value')->nullable();
             $table->string('unit')->nullable();
 
-            $table->foreignId('sub_categories_id');
+            $table->foreignId('sub_category_id');
             $table->timestamps();
         });
     }

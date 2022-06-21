@@ -25,7 +25,7 @@ class SubCategoryController extends Controller
         $perPage = Request::input('perPage') ?: 5;
         return Inertia::render('Parameters/GeneralP/Index', [
             'parameters' => ParamField::query()
-                ->where("sub_categories_id", 1)
+                ->where("sub_category_id", 1)
                 ->when(Request::input('search'), function ($query, $search) {
                     $query->where('name', 'like', "%{$search}%");
                 })
@@ -46,7 +46,7 @@ class SubCategoryController extends Controller
         $perPage = Request::input('perPage') ?: 5;
         return Inertia::render('Parameters/GeneralP/Index', [
             'parameters' => ParamField::query()
-                ->where("sub_categories_id", 2)
+                ->where("sub_category_id", 2)
                 ->when(Request::input('search'), function ($query, $search) {
                     $query->where('name', 'like', "%{$search}%");
                 })
@@ -65,7 +65,7 @@ class SubCategoryController extends Controller
         $perPage = Request::input('perPage') ?: 5;
         return Inertia::render('Parameters/GeneralP/Index', [
             'parameters' => ParamField::query()
-                ->where("sub_categories_id", 4)
+                ->where("sub_category_id", 4)
                 ->when(Request::input('search'), function ($query, $search) {
                     $query->where('name', 'like', "%{$search}%");
                 })
@@ -84,7 +84,7 @@ class SubCategoryController extends Controller
         $perPage = Request::input('perPage') ?: 5;
         return Inertia::render('Parameters/GeneralP/Index', [
             'parameters' => ParamField::query()
-                ->where("sub_categories_id", 3)
+                ->where("sub_category_id", 3)
                 ->when(Request::input('search'), function ($query, $search) {
                     $query->where('name', 'like', "%{$search}%");
                 })

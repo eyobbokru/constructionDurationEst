@@ -46,10 +46,10 @@ class ParamFieldController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        //dd($request);
 
         $Formfield = $request->validate([
-            'sub_categories_id' => 'required',
+            'sub_category_id' => 'required',
             'name' => 'required',
             'value' => '',
             'unit' => '',
@@ -66,13 +66,22 @@ class ParamFieldController extends Controller
                 ParamFieldOption::insert([
                     'name' => $opt['option_name'],
                     'value' => $opt['value'],
-                    'param_fields_id' => $paramfiled->id
+                    'param_field_id' => $paramfiled->id
 
                 ]);
             }
         }
 
-        return redirect()->back()->with('flash.banner', 'Parameter Created sucessfully');
+        if ((int) $request->sub_category_id == 1)
+            return    Redirect::route('admin.parameter.index')->with('flash.banner', 'Parameter Created successfully');
+        elseif ((int) $request->sub_category_id == 2)
+            return   Redirect::route('admin.parameter.index_pre')->with('flash.banner', 'Parameter Created successfully');
+        elseif ((int) $request->sub_category_id == 3)
+            return   Redirect::route('admin.parameter.index_con')->with('flash.banner', 'Parameter Created successfully');
+        elseif ((int) $request->sub_category_id == 4)
+            return   Redirect::route('admin.parameter.index_pos')->with('flash.banner', 'Parameter Created successfully');
+        else
+            return Redirect::route('admin.parameter.index')->with('flash.banner', 'Parameter Created successfully');
     }
 
     /**

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ParamFieldOption extends Model
 {
     use HasFactory;
-    protected $fillable = ['name',  'value', 'param_fields_id'];
+    protected $fillable = ['name',  'value', 'param_field_id'];
 
     public function paramField()
     {
